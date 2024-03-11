@@ -1,0 +1,70 @@
+<ul class = "nav_area">
+  <li class = "button_top">動畫互動網頁程式入門：Project0</li>
+  <li class = "button_top">我的作品</li>
+  <li class = "button_top">心得分享</li>
+  <li class = "button_top">聯絡我們</li>
+</ul>
+
+
+<div class = "card" >
+  
+  <h2>呂奕廷 
+  <span>Yi-Ting Lu</span>
+  </h2>
+  <h5>華語老師</h5>
+  <hr>
+  <p> 熱愛學習新知。<br>希望透過不斷學習，充實自己有限的人生。</p>
+  
+  <br>
+  
+  <div>
+  <div class = "like_button">喜歡</div>
+  <div class = "like_button">不喜歡</div>
+  </div>
+  
+</div>
+
+
+.nav_area{
+  background-color:#2a5c2f;
+}
+
+.button_top{
+  display: inline-block;
+  border-bottom: solid 5px #50ab59;
+  color: white;
+  background-color: #2a5c2f;
+  
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  font-family: Arial; 
+}
+
+.card {
+  border : solid 1px black;     
+  padding: 5px; 
+  padding-left: 10px; 
+  padding-right: 10px; 
+  letter-spacing: 0.8px; 
+  width: 400px; 
+  height: 200px; 
+  background-color: #e6f4fc;
+  font-family: Sans-serif;
+  
+  position: relative;
+  left: 150px;
+}
+
+.like_button{
+  border: solid 1px #8b99e0;
+  display: inline-block;
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-family: Sans-serif;
+  
+  margin: 5px;
+  margin-left: 25px;
+}

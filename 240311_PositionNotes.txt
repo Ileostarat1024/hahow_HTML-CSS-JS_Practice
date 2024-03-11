@@ -1,0 +1,62 @@
+<h3 style = "font-family: Arial"> CSS 定位筆記 </h3>
+
+<div class="static word"> Static 是預設位置，順著畫面排下來。</div>
+<div class="relative word"> Relative 是相對於預設位置，可以調整上下左右偏移。
+  <div class="hide_absolute word">藏在Rel中的Abs</div>
+  
+</div>
+<div class="absolute word">Absolute 是絕對位置，固定在網頁的指定地方。
+  <div class="hide_absolute word">藏在Abs中的Abs</div>
+</div>
+
+<div class="fixed word">Fixed 是固定位置，固定在視窗畫面中的指定地方。
+  <div class="hide_absolute word">藏在Fixed中的Abs</div>
+  
+</div>
+
+.word{
+  font-family: Arial;
+  border: solid 1px black;
+  width: 200px;
+  height: 100px;
+}
+
+.static{
+  /* 預設 static,故不變 */
+  position: static;
+  /* static 沒辦法調整位置 */
+  left: 100px;
+  top: 100px;
+}
+
+.relative{
+  position: relative;
+  left: 300px;
+  top: 100px;
+}
+
+.absolute{
+  position: absolute;
+  right: 100px;
+  top: 265px;
+}
+
+.fixed{
+  position: fixed;
+  right: 100px;
+  top: 55px;
+}
+
+/* 為了讓fixed看得出效果，直接調整整個網頁的body，讓版面變長*/
+/* 注意body是固定元素，不要加class標記".", height後面用冒號，不是用等於 */
+body{
+  height: 2000px;
+}
+
+.hide_absolute{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 150px;
+  height: 20px;
+}
