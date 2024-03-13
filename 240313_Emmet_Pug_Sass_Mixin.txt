@@ -1,0 +1,29 @@
+.block1 1
+.block2 2
+.block3 3
+.button1 按鈕一
+.button2 按鈕二
+
+
+@mixin block($color: black, $length: 50px) /*放置參數，預設值可客製化*/
+  width: $length
+  height: $length
+  border: solid 2px $color
+
+.block1
+  +block(red, 10px)
+.block2
+  +block(green, 20px)
+.block3
+  +block(blue, 30px)
+  
+@mixin size($w,$h)
+  width: $w
+  height: $h
+  
+.button1
+  border: solid 1px
+  +size(200px, 50px)
+.button2
+  border: solid 1px
+  +size(300px, 100px)
