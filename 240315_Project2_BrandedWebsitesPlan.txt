@@ -1,0 +1,243 @@
+.header
+   img.icon(src="https://upload.wikimedia.org/wikipedia/commons/e/ee/AmazingTalker.png", alt="")
+
+.content.content_red
+  .max_width
+    h5 Style Guideline
+    h1 品牌網站視覺引導 - 40px 大標題
+    h1.small_English English Style Guideline for h1 Title - 24px
+    .title_hr
+    h2 品牌網站視覺引導 - 30px 中標題
+    h2.small_English English Style Guideline for h2 Title - 18px
+    h3 品牌網站視覺引導 - 20px 小標題
+    h3.small_English English Style Guideline for h3 Title - 12px
+    hr
+    
+    h5 VI Colors
+    .color_chip
+      .color_tag #ffffff
+      .color_block.color_block_white
+    .color_chip
+      .color_tag #ff5f5f
+      .color_block.color_block_red
+    .color_chip
+      .color_tag #00cab9
+      .color_block.color_block_green
+    .color_chip
+      .color_tag #646464
+      .color_block.color_block_black
+      
+    h5 Button Samples
+    .button.button_white 按鈕範例
+    .button.button_red 按鈕範例
+    .button.button_green 按鈕範例
+
+.content.content_white
+  .max_width
+    h5 Style Guideline
+    h1 品牌網站視覺引導 - 40px 大標題
+    h1.small_English English Style Guideline for h1 Title - 24px
+    .title_hr
+    h2 品牌網站視覺引導 - 30px 中標題
+    h2.small_English English Style Guideline for h2 Title - 18px
+    h3 品牌網站視覺引導 - 20px 小標題
+    h3.small_English English Style Guideline for h3 Title - 12px
+    hr
+    
+    h5 VI Colors
+    .color_chip
+      .color_tag #ffffff
+      .color_block.color_block_white
+    .color_chip
+      .color_tag #ff5f5f
+      .color_block.color_block_red
+    .color_chip
+      .color_tag #00cab9
+      .color_block.color_block_green
+    .color_chip
+      .color_tag #646464
+      .color_block.color_block_black
+      
+    h5 Button Samples
+    .button.button_white 按鈕範例
+    .button.button_red 按鈕範例
+    .button.button_green 按鈕範例
+    
+.content.content_green
+  .max_width
+    h5 Style Guideline
+    h1 品牌網站視覺引導 - 40px 大標題
+    h1.small_English English Style Guideline for h1 Title - 24px
+    .title_hr
+    h2 品牌網站視覺引導 - 30px 中標題
+    h2.small_English English Style Guideline for h2 Title - 18px
+    h3 品牌網站視覺引導 - 20px 小標題
+    h3.small_English English Style Guideline for h3 Title - 12px
+    hr
+    
+    h5 VI Colors
+    .color_chip
+      .color_tag #ffffff
+      .color_block.color_block_white
+    .color_chip
+      .color_tag #ff5f5f
+      .color_block.color_block_red
+    .color_chip
+      .color_tag #00cab9
+      .color_block.color_block_green
+    .color_chip
+      .color_tag #646464
+      .color_block.color_block_black
+      
+    h5 Button Samples
+    .button.button_white 按鈕範例
+    .button.button_red 按鈕範例
+    .button.button_green 按鈕範例
+
+$color_white: #ffffff
+$color_red: #ff5f5f
+$color_green: #00cab9
+$color_black: #646464
+
+$font_base_size: 10px
+$max_width: 768px
+
+@mixin size($w,$h)
+  width: $w
+  height: $h
+  
+*
+  // border: solid 1px
+  position: relative
+
+html, body
+  padding: 0px
+  margin: 0px
+  
+.header
+  background-color: $color_white
+  height: 300px
+  border-bottom: solid 2px $color_red
+  & .icon
+    position: absolute
+    width: 300px
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%) 
+    
+.max_width
+  max-width: $max_width
+  margin-left: auto
+  margin-right: auto
+  
+.content
+  font-family: Oswald, Arial
+  padding: 50px
+  color: $color_black
+  & h5
+    margin-top: 10px
+  & h1
+    font-size: $font_base_size*4
+  & h2
+    font-size: $font_base_size*3
+  & .title_hr
+    border: solid 2px $color_red
+    width: 60px
+    
+  & h3
+    font-size: $font_base_size*2
+  & h1.small_English
+    font-size: $font_base_size*2.4
+  & h2.small_English
+    font-size: $font_base_size*1.8
+  & h3.small_English
+    font-size: $font_base_size*1.2
+  & .small_English
+    margin-top: -20px
+    color: $color_red
+  & hr
+    margin-top: 25px
+    border: solid 0.3px $color_black
+    
+  & .color_chip
+    display: inline-block
+    margin-right: 15px
+  & .color_tag, & .color_block
+    display: inline-block
+    vertical-align: middle
+  & .color_tag
+    width: 70px
+  & .color_block
+    +size(35px,35px)
+    border: solid 2px 
+  & .color_block_white
+    background-color: $color_white
+  & .color_block_red
+    background-color: $color_red
+  & .color_block_green
+    background-color: $color_green
+  & .color_block_black
+    background-color: $color_black
+
+  & .button
+    display: inline-block
+    padding: 5px 25px
+    letter-spacing: 1.5px
+    font-size: $font_base_size*1.5
+    margin-right: 10px
+    font-weight: bold
+    border: solid 1px $color_black
+    border-radius: 5%
+    box-shadow: 3px 3px 5px rgba($color_black,0.3)
+  & .button.button_white
+      background-color: $color_white
+  & .button.button_red
+      background-color: $color_red
+      color: $color_white
+  & .button.button_green
+      background-color: $color_green
+      color: $color_white
+
+.content_red
+  background-color: $color_red
+  color: $color_white
+  & .small_English
+    color: $color_white
+  & h1, & h2, & h3
+    font-weight: 450
+  & .title_hr
+    border: solid 2.5px $color_green
+  & hr
+    border: solid 0.3px $color_white
+  & .button
+    border: solid 1px $color_white
+  & .button_white
+      color: $color_red
+  
+.content_green
+  background-color: $color_green
+  color: $color_white
+  & .small_English
+    color: $color_black
+  & h1, & h2, & h3
+    font-weight: 450
+  & h5
+    // color: $color_black
+  & .color_tag
+    color: $color_black
+  & .color_block
+    border: solid 2px $color_black
+  & .title_hr
+    border: solid 2.5px $color_red
+  & hr
+    border: solid 0.3px $color_white
+  & .button
+    // border: solid 0px $color_black
+    border: solid 1px $color_white
+  & .button_red
+    // border: solid 1px $color_white
+  & .button_white
+    color: $color_black
+    // border: solid 1px $color_black
+  & .button_green
+    // border: solid 1px $color_white
