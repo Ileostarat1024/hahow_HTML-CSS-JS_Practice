@@ -1,0 +1,41 @@
+div(data-size="small", data-color="red") 按鈕
+div(data-size="medium", data-color="blue") 按鈕
+div(data-size="large", data-color="green") 按鈕
+
+
+
+*
+  font-family: Arial
+
+@mixin size($w, $h)
+  width: $w
+  height: $h
+
+html, body
+  background-color: rgba(0,0,0)
+
+div
+  border: solid 2px
+  padding: 20px
+  margin: 20px
+  color: white
+  background-color: transparent
+  +size(150px, 50px)
+  &::before
+    content: "（" attr(data-size) "）"" 這是前面的部分 -"
+  &::after
+    content: "- 這是後面的部分（" attr(data-color) "）"
+// Attr: 透過中括弧來寫，更像是過濾資訊，而非創建新的class
+div[data-size="small"]
+  +size(150px, 50px)
+div[data-size="medium"]
+  +size(250px, 70px)
+div[data-size="large"]
+  +size(350px, 90px)
+div[data-color="red"]
+  border-color: #d45d3f
+div[data-color="blue"]
+  border-color: #3f58d4
+div[data-color="green"]
+  border-color: #3fd46c
+  
