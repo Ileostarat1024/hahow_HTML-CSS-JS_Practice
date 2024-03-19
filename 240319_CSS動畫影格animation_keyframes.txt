@@ -1,0 +1,111 @@
+.box
+  .block.block1 
+  .block.block2 
+  .block.block3 
+  .block.block4 
+  .block.block5 
+
+@mixin size($w, $h)
+  width: $w
+  height: $h
+  
+.box, .block
+  border: solid 2px
+  
+.box
+  +size(900px, 500px)
+  position: relative
+  
+.block
+  +size(50px, 50px)
+  position: absolute
+  bottom: 0px
+.block1
+  left: 150px
+  animation: ani1 2s infinite
+  //記得用animation呼叫動畫(動畫名、完成總秒數、重複次數)
+.block2
+  left: 300px
+  animation: ani2 2s infinite
+.block3  
+  left: 450px
+  animation: ani3 2s infinite
+.block4
+  left: 600px
+  animation: ani4 2s infinite
+.block5 
+  left: 750px
+  animation: ani5 2s infinite
+
+//設定動畫，用影格的概念
+@keyframes ani1
+  0%
+    bottom: 0px
+    background-color: white
+  50%
+    bottom: 100px
+    background-color: green
+  100%
+    bottom: 0px
+    background-color: white
+
+@keyframes ani2
+  0%
+    bottom: 0px
+  30%
+    transform: rotate(0deg)
+  50%
+    bottom: 100px
+    background-color: red
+    transform: rotate(180deg)
+  70%
+    transform: rotate(0deg)
+  100%
+    bottom: 0px
+
+@keyframes ani3
+  0%
+    bottom: 0px
+  30%
+    transform: scale(1)
+  50%
+    bottom: 100px
+    background-color: blue
+    transform: scale(1.5)
+  70%
+    transform: scale(1)
+  100%
+    bottom: 0px
+  
+@keyframes ani4
+  0%
+    transform: translateX(0px) translateY(0px)
+  20%
+    transform: translateX(70px) translateY(0px)
+  40%
+    transform: translateX(70px) translateY(-70px)
+    background-color: yellow
+  60%
+    transform: translateX(0px) translateY(-70px)
+  80%
+    transform: translateX(0px) translateY(0px)
+
+//傾斜的話要設定軸心
+@keyframes ani5
+  0%
+    transform: skew(0deg)
+    transform-origin: 0% 100%
+  30%
+    transform: skew(20deg)
+    transform-origin: 0% 100%
+  70%
+    transform: skew(-20deg)
+    transform-origin: 0% 100%
+    background-color: pink
+  100%
+    transform: skew(0deg)
+    transform-origin: 0% 100%
+  
+
+  
+  
