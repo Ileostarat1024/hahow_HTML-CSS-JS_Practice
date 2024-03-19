@@ -1,0 +1,44 @@
+.block1
+  .block2 
+  .block3
+  .block4
+
+
+
+//mixin 中的值先給就是預設
+@mixin block($w:50px, $h:50px, $back:white, $bor:black)
+  width: $w
+  height: $h
+  background-color: $back
+  border: solid 1px $bor
+  //動畫變化的時間
+  transition-duration: 0.5s
+
+.block1
+  +block(100px, 200px)
+  margin-left: auto
+  margin-right: auto
+  margin-top: 150px
+.block1:hover .block2
+  +block(50px, 50px)
+  background-color: red
+  margin-top: 10px
+.block1:hover .block3
+  +block(50px, 50px)
+  background-color: yellow
+  margin-top: 10px
+.block1:hover .block4
+  +block(50px, 50px)
+  background-color: green
+  margin-top: 10px
+.block1:active
+  background-color: black
+  
+.block2, .block3, .block4
+  +block(30px, 30px)
+  margin-left: auto
+  margin-right: auto
+  margin-top: 25px
+  border-radius: 100px
+
+ 

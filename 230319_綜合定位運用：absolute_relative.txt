@@ -1,0 +1,50 @@
+.phone
+  .top
+  .bottom
+    .headpic
+      .name 呂奕廷
+
+
+*
+  //border: solid 2px
+  font-family: Arial
+  position: relative
+
+@mixin size($w, $h)
+  width: $w
+  height: $h
+
+html, body
+  +size(100%, 100%)
+  padding: 0px
+  margin: 0px
+  background-color: #eee
+
+.phone
+  width: 240px
+  margin-left: auto
+  margin-right: auto
+  margin-top: 150px
+  border: solid 1px #888
+  border-radius: 6px
+.top
+  +size(100%, 150px)
+  background-image: url('https://scontent.fmnl25-4.fna.fbcdn.net/v/t1.6435-9/125984015_1298672333816893_8601297040279395400_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFRrX6_k9zyBrhHrV5rxApSbOa5EOAx3I5s5rkQ4DHcjhy-UOiBMCfsuY9g_tQG9laWm8b0JWIsXO9NBJRG0bqP&_nc_ohc=WgiLsBl33BMAX_8DGvR&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfDyx2nFJgu4TIGWjTzA62xN1eULH_k6D8PiH6nN1Zlf-g&oe=66204993')
+  background-size: cover
+  background-position: center center
+.bottom
+  +size(100%, 200px)
+  background-color: white
+.headpic
+  +size(80px, 80px)
+  left: 20px
+  top: -50px
+  background-image: url('https://scontent.fmnl25-1.fna.fbcdn.net/v/t1.6435-1/133832332_1329259770758149_6260621980414501231_n.jpg?stp=dst-jpg_s480x480&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGFra0BwxOi3Ms8JZ0OoPMkwj1krvaizwrCPWSu9qLPCjk473jvMAxNQ4jTnFdyfgDQZ_IOilMoe7Gxp6Akf7bp&_nc_ohc=PiUNHLglC20AX_LoTiP&_nc_ht=scontent.fmnl25-1.fna&oh=00_AfD4MVHf27uroampFy9su7nV-NdVFyNRDRXUWLIknxgwuQ&oe=66204932')
+  background-size: cover
+  border: solid 2px white
+.name
+  left: 100px
+  color: white
+  letter-spacing: 1.5px
+  top: 10px
+
