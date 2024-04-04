@@ -1,0 +1,327 @@
+.daybox
+  label
+    input#switch_night(type="checkbox")
+    .top
+      .moon
+      .cloud
+        .rain
+        .rain.rain1
+        .rain.rain2
+      svg.tempsvg
+        circle(cx=0 cy=100 r=3)
+        text(x=0 y=100) 31°C
+
+        circle(cx=70 cy=80 r=3)
+        text(x=70 y=80) 32°C
+
+        circle(cx=140 cy=70 r=3)
+        text(x=140 y=70) 32°C
+
+        circle(cx=210 cy=110 r=3)
+        text(x=210 y=110) 29°C
+
+        circle(cx=280 cy=130 r=3)
+        text(x=280 y=130) 28°C
+
+        circle(cx=350 cy=140 r=3)
+        text(x=350 y=140) 27°C
+
+        circle(cx=420 cy=120 r=3)
+        text(x=420 y=120) 29°C
+
+        circle(cx=490 cy=80 r=3)
+        text(x=490 y=80) 32°C
+
+        polyline(points="0,100 70,80 140,70 210,110 280,130 350,140 420,120 490,80")
+
+      .text_area
+        .temperature 28°C
+        .infos
+          .address Cebu City, Philippines
+          .time Thursday 8:00PM
+
+    .bottom
+      .dayweather
+        h3 MON
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=22)
+      .dayweather
+        h3 TUE
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=22)
+      .dayweather
+        h3 WED
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=22)
+      .dayweather
+        h3 THU
+        svg(viewbox="-60 -50 110 110")
+          circle.sun(cx=0 cy=0 r=22)
+          circle.cloud(cx=-35 cy=30 r=17)
+          circle.cloud(cx=-15 cy=30 r=17)
+          circle.cloud(cx=0 cy=30 r=17)
+          circle.cloud(cx=-27 cy=10 r=15)
+          circle.cloud(cx=-6 cy=8 r=12)
+      .dayweather
+        h3 FRI
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=22)
+      .dayweather
+        h3 SAT
+        svg(viewbox="-67 -40 100 100")
+          circle.cloud(cx=-35 cy=30 r=17)
+          circle.cloud(cx=-15 cy=30 r=17)
+          circle.cloud(cx=0 cy=30 r=17)
+          circle.cloud(cx=-27 cy=10 r=15)
+          circle.cloud(cx=-6 cy=8 r=12)
+      .dayweather
+        h3 SUN
+        svg(viewbox="-67 -25 100 100")
+          line.rain(x1=-40 y1=20 x2=-40 y2=30)
+          line.rain.rain1(x1=-25 y1=20 x2=-25 y2=30)
+          line.rain.rain2(x1=0 y1=20 x2=0 y2=30)
+          circle.cloud(cx=-35 cy=30 r=17)
+          circle.cloud(cx=-15 cy=30 r=17)
+          circle.cloud(cx=0 cy=30 r=17)
+          circle.cloud(cx=-27 cy=10 r=15)
+          circle.cloud(cx=-6 cy=8 r=12)
+
+
+$color_white: #f3f3f3
+$color_yellow: #FFD633
+$color_black: #222
+$color_blue_start: #19283D
+$color_blue_end: #1D678F
+$color_rain: #4DACFF
+$color_white_cloud: #f2f9fe
+$color_grey_cloud: #ccc
+*
+  // border: solid 1px black
+  position: relative
+  font-family: "Hind Vadodara", sans-serif
+
+@mixin size($w, $h)
+  width: $w
+  height: $h
+
+html, body
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $color_black
+label
+  cursor: pointer
+.daybox
+  width: 50%
+  max-width: 400px
+  background-color: $color_white
+  box-shadow: 0 0 30px rgba(black, 0.5)
+  border-radius: 6px
+  &:hover
+    .dayweather
+      top: 0px
+      opacity: 1
+    .bottom
+      height: 90px
+    //表示第幾個.dayweather  
+    .dayweather:nth-child(1)
+      transition-delay: 0.15s
+    .dayweather:nth-child(2)
+      transition-delay: 0.3s
+    .dayweather:nth-child(3)
+      transition-delay: 0.45s
+    .dayweather:nth-child(4)     
+      transition-delay: 0.6s
+    .dayweather:nth-child(5)     
+      transition-delay: 0.75s
+    .dayweather:nth-child(6)     
+      transition-delay: 0.9s
+    .dayweather:nth-child(7)     
+      transition-delay: 1.05s
+
+.top
+  height: 330px
+  background: linear-gradient(30deg, $color_blue_start, $color_blue_end)
+  background-size: 100% 300%
+  animation: daylight 20s infinite
+  border-radius: 5px 5px 0px 0px
+
+  @keyframes daylight
+    0%
+      background-position: 100% 30%
+    50%
+      background-position: 100% 100%
+    100%
+      background-position: 100% 30%
+  .moon
+    +size(50px, 50px)
+    position: absolute
+    border-radius: 100%
+    box-shadow: 15px -15px
+    left: 50px
+    top: 130px
+    animation: moonmove 20s infinite
+  
+  @keyframes moonmove
+    0%
+      box-shadow: 15px -15px $color_yellow
+      transform: translateX(-15px) translateY(15px)
+    100%
+      box-shadow: -30px 30px $color_yellow
+      transform: translateX(30px) translateY(-30px)
+  
+.cloud
+  +size(100px, 36px)
+  position: absolute
+  left: 200px
+  bottom: 50px
+  border-radius: 20px
+  animation: clouddrift 4s infinite
+  background-color: $color_white
+  box-shadow: 0 0 30px rgba(black, 0.5)
+  &:before, &:after
+    // border: solid 1px black
+    content: ""
+    display: block
+    +size(50px, 50px)
+    border-radius: 100%
+    position: absolute
+    background-color: $color_white
+  &:before
+    left: 16px
+    top: -28px
+  &:after
+    left: 35px
+    top: -20px
+  .rain
+    +size(2px, 10px)
+    position: absolute
+    left: 45px
+    bottom: 15px
+    animation: raindrop 1s infinite linear
+    background-color: $color_white
+  .rain1
+    left: 30px
+    bottom: 20px
+    animation-delay: -0.4s
+  .rain2
+    left: 80px
+    bottom: 27px      
+    animation-delay: -0.7s
+
+@keyframes clouddrift
+  0%
+    transform: translateY(0%)
+  50%
+    transform: translateY(-10%)
+  100%
+    transform: translateY(0%)
+    
+@keyframes raindrop
+  0%
+    transform: translateY(0px)
+  100%
+    transform: translateY(50px)
+    opacity: 0
+    
+.tempsvg
+  width: 100%
+  polyline
+    stroke: $color_white
+    fill: none
+    opacity: 0.1
+    stroke-width: 0.7px
+  text
+    font-size: 10px
+    fill: $color_white
+    transform: translateX(-7px) translateY(-10px)
+    opacity: 0
+  circle
+    fill: $color_white
+    opacity: 0.1
+    
+.bottom
+  height: 10px
+  display: flex
+  justify-content: center
+  box-shadow: 0 0 30px rgba(black, 0.5)
+  border-radius: 0px 0px 5px 5px
+  overflow: hidden
+  transition-duration: 1s
+  
+  .dayweather
+    width: calc(100% / 7 - 5px)
+    display: inline-block
+    text-align: center
+    top: 20px
+    opacity: 0
+    transition: 1s
+    h3
+      font-size: 8px
+      color: rgba($color_black, 0.6)
+      font-weight: 400
+      letter-spacing: 1px
+      
+    svg
+      width: 100%
+      max-width: 40px
+      height: 40px
+      .sun
+        fill: $color_yellow
+        stroke-width: 30px
+        stroke-dasharray: 5px
+        stroke: rgba($color_yellow, 0.5)
+      .rain
+        stroke: $color_rain
+        stroke-width: 2px
+        animation: raindrop 2s infinite
+      .rain1
+        animation-delay: -1.2s
+      .rain2
+        animation-delay: -0.7s
+      .cloud
+        fill: $color_grey_cloud
+    
+
+      
+.text_area
+  display: inline-block
+  position: absolute
+  bottom: 25px
+  left: 25px
+  color: $color_white
+  
+.temperature 
+  font-size: 75px
+  line-height: 80px
+  
+.infos
+  font-size: 13px
+  opacity: 0.6
+
+
+.moon, .cloud
+  transition: 0.5s
+.tempsvg
+  circle, polyline, text
+    transition: 0.5s
+
+#switch_night
+  display: none
+#switch_night:checked+.top
+  .moon, .cloud
+    opacity: 0.1
+  .tempsvg
+    circle, text, polyline
+      opacity: 1
+  .tempsvg
+  circle
+    transition: 0.5s
+  polyline
+    transition: 0.5s 0.3s
+  text
+    transition: 0.5s 0.6s
